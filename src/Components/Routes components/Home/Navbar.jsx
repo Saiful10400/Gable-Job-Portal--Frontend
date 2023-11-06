@@ -22,24 +22,26 @@ const Navbar = () => {
     })
  
 
-
-console.log(scroll)
+ 
 
   let li = (
     <>
-      <NavLink className={"monsera"} onClick={() => setMenu(false)} to={"My_profile"}>
+      <NavLink className={"monsera"} onClick={() => setMenu(false)} to={"/"}>
         Home
       </NavLink>
-      <NavLink className={"monsera"} onClick={() => setMenu(false)} to={"My_site"}>
+      <NavLink className={"monsera"} onClick={() => setMenu(false)} to={"/All_Jobs"}>
         All Jobs
       </NavLink>
-      <NavLink className={"monsera"} onClick={() => setMenu(false)} to={"Add_product"}>
+      <NavLink className={"monsera"} onClick={() => setMenu(false)} to={"/Applied_Jobs"}>
         Applied Jobs
       </NavLink>
-      <NavLink className={"monsera"} onClick={() => setMenu(false)} to={"My_products"}>
-        My jobs
+      <NavLink className={"monsera"} onClick={() => setMenu(false)} to={"/Add_A_Job"}>
+        Add a Job
       </NavLink>
-      <NavLink className={"monsera"} onClick={() => setMenu(false)} to={"order"}>
+      <NavLink className={"monsera"} onClick={() => setMenu(false)} to={"/My_Jobs"}>
+        My Jobs
+      </NavLink>
+      <NavLink className={"/Blog"} onClick={() => setMenu(false)} to={"/Blog"}>
         Blogs
       </NavLink>
     </>
