@@ -67,7 +67,10 @@ const Navbar = () => {
             <ul className=" text-base font-medium hidden md:flex justify-center items-center gap-6">
               {li}
             </ul>
-            <div><button className="btn bg-gradient-to-r from-[#38A745] from-0%  to-[#4CCE5B] to-60% text-base font-medium w-28 h-12 text-white">Login</button></div>
+            <div>
+              
+              <Link to={"/Login"} className="btn bg-gradient-to-r from-[#38A745] from-0%  to-[#4CCE5B] to-60% text-base font-medium w-28 h-12 text-white">Login</Link>
+              </div>
           </div>
         </div>
       </div>
