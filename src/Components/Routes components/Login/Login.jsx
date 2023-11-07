@@ -13,8 +13,7 @@ import { BiSolidLock } from "react-icons/bi";
 
 
 const Login = () => {
-    const url=useLocation()
-    console.log(url)
+
     return (
       <div className="h-[90vh] relative">
         <img className="w-full h-60 absolute bottom-60" src={loginBg} alt="" />
