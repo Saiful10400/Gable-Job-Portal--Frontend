@@ -2,8 +2,9 @@ import { Link, NavLink } from "react-router-dom";
 
 import { AiOutlineMenu } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
-import { useEffect, useState } from "react";
+import {  useContext, useState } from "react";
 import logo from "../../../../public/img/logo.png"
+import { parentProvider } from "../../Context Api/DataProvider";
 
 const Navbar = () => {
     const [menu, setMenu] = useState(false);
@@ -46,7 +47,21 @@ const Navbar = () => {
       </NavLink>
     </>
   );
-  
+  const{user,signout}=useContext(parentProvider)
+  const[show,setShow]=useState(false)
+  window.onclick=()=>{
+    setShow(false)
+  }
+
+  const buttonHandle=(event)=>{
+    setShow(!show)
+    event.stopPropagation()
+  }
+  // logout.
+  const logoutHandle=(e)=>{
+    e.stopPropagation()
+    signout()
+  }
   return (
     <>
       <div className="sticky z-30 top-0">
@@ -68,8 +83,21 @@ const Navbar = () => {
               {li}
             </ul>
             <div>
+
+            <Link to={"/Login"} className={`btn bg-gradient-to-r from-[#38A745] from-0%  to-[#4CCE5B] to-60% text-base font-medium w-28 h-12 text-white ${user? "hidden" : ""}`}>Login</Link>
+            <div className={`${!user? "hidden" : ""} relative`}> 
+
+
+            <div className={`bg-red-500 w-36 h-20 rounded-lg items-center absolute top-[110%] -left-[80%]  justify-center ${show? "flex" : "hidden"} `}>
+              <button onClick={logoutHandle} className="btn btn-sm btn-warning">Logout</button>
+              </div>
+
+              <button onClick={buttonHandle}><img className="w-14 h-14 rounded-full object-contain" src={user?.photoURL}  /></button>
+                
+            </div>
+             
               
-              <Link to={"/Login"} className="btn bg-gradient-to-r from-[#38A745] from-0%  to-[#4CCE5B] to-60% text-base font-medium w-28 h-12 text-white">Login</Link>
+             
               </div>
           </div>
         </div>

@@ -9,12 +9,39 @@ import { FaLock } from "react-icons/fa";
 import { IoLinkOutline } from "react-icons/io5";
 import { useContext } from "react";
 import { parentProvider } from "../../Context Api/DataProvider";
+import { updateProfile } from "firebase/auth";
+import auth from "../../Authintication/firebase.config";
+import swal from "sweetalert";
+
  
  
 const Register = () => {
 
-const {name}=useContext(parentProvider)
-console.log(name)
+const{createUser,user}=useContext(parentProvider)
+const formHandle=(e)=>{
+  e.preventDefault()
+  const form=e.target
+  const name=form.name.value
+  const password=form.password.value
+  const email=form.email.value
+  const url=form.url.value
+  
+  createUser(email,password)
+  .then(()=>{
+    updateProfile(auth.currentUser,{
+      displayName:name,
+      photoURL:url
+    })
+    swal("Welcome","You successfully login","success")
+    form.reset()
+  })
+  .catch(err=>{
+    console.log(err)
+  })
+  
+}
+
+console.log(user)
 
   return (
     <div className="h-[90vh] relative">
@@ -22,10 +49,11 @@ console.log(name)
       <div className="absolute top-5 right-6 w-4/5 h-[90%] bg-white rounded-xl items-center  flex">
         <div className="w-[45%] px-28 py-5">
           <h1 className="text-5xl font-bold mb-20">Rigistration</h1>
-          <form className="flex flex-col gap-7">
+          <form className="flex flex-col gap-7" onSubmit={formHandle}>
             <div className="relative">
               <input
                 required
+                name="name"
                 placeholder="Your Name"
                 className="   w-full rounded-md pl-14  text-xl font-bold  outline outline-black focus:outline-4  focus:outline-green-500 h-[50px]"
                 type="text"
@@ -35,6 +63,7 @@ console.log(name)
             <div className="relative">
               <input
                 required
+                name="email"
                 placeholder="Your E-mail"
                 className="   w-full rounded-md pl-14  text-xl font-bold  outline outline-black focus:outline-4  focus:outline-green-500 h-[50px]"
                 type="email"
@@ -44,6 +73,7 @@ console.log(name)
             <div className="relative">
               <input
                 required
+                name="password"
                 placeholder="New Password"
                 className="   w-full rounded-md pl-14 text-xl font-bold  outline outline-black focus:outline-4  focus:outline-green-500 h-[50px]"
                 type="password"
@@ -53,6 +83,7 @@ console.log(name)
             <div className="relative">
               <input
                 required
+                name="url"
                 placeholder="Profile photo url"
                 className="   w-full rounded-md pl-14 text-xl font-bold  outline outline-black focus:outline-4  focus:outline-green-500 h-[50px]"
                 type="text"

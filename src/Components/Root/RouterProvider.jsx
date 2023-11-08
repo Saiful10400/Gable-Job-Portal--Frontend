@@ -3,6 +3,8 @@ import Home from "../Routes components/home/Home";
 import Root from "./Root";
 import Login from "../Routes components/Login/Login";
 import Register from "../Routes components/Login/Register";
+import Addjob from "../Routes components/Add a job/Addjob";
+import Myjobs from "../Routes components/My jobs/Myjobs";
 
 const router = createBrowserRouter([
   {
@@ -23,11 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/Add_A_Job",
-        element: <h1>Add a job</h1>,
+        element: <Addjob></Addjob>,
       },
       {
         path: "/My_Jobs",
-        element: <h1>my jobs</h1>,
+        element: <Myjobs></Myjobs>,
       },
       {
         path: "/Blog",
