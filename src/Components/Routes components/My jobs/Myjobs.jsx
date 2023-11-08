@@ -41,10 +41,6 @@ const deleteJobHandle = (id) => {
 };
 
 
-// update handle.
-const updateHandle=(id)=>{
-  console.log(id)
-}
 
 
 
@@ -69,7 +65,7 @@ const updateHandle=(id)=>{
 
 
               {
-                data.map((item,idx)=><TableData update={updateHandle} btn={deleteJobHandle} idx={idx} item={item} key={item._id}></TableData>)
+                data.map((item,idx)=><TableData  btn={deleteJobHandle} idx={idx} item={item} key={item._id}></TableData>)
               }
 
 
