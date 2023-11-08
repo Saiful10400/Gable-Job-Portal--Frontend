@@ -6,6 +6,7 @@ import Register from "../Routes components/Login/Register";
 import Addjob from "../Routes components/Add a job/Addjob";
 import Myjobs from "../Routes components/My jobs/Myjobs";
 import UpdateOne from "../Routes components/My jobs/UpdateOne";
+import Alljobs from "../Routes components/All jobs/Alljobs";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/All_Jobs",
-        element: <h1>all jobs.</h1>,
+        element: <Alljobs></Alljobs>,
       },
       {
         path: "/",
