@@ -29,8 +29,7 @@ const deleteJobHandle = (id) => {
   }).then((value) => {
     switch (value) {
       case "catch":
-        axios
-          .delete(`http://localhost:5000/Delete_my_jobs?id=${id}`)
+        axios.delete(`http://localhost:5000/Delete_my_jobs?id=${id}`)
           .then(() => {
             const remainingJob = data.filter((item) => item._id != id);
             setData(remainingJob);
@@ -52,11 +51,13 @@ const deleteJobHandle = (id) => {
           <table className="table table-zebra">
             {/* head */}
             <thead>
-              <tr>
+              <tr className="text-2xl">
                 <th></th>
                 <th>Name</th>
-                <th>Job</th>
-                <th>Favorite Color</th>
+                <th>Type</th>
+                <th>Applicant</th>
+                <th>Salary range</th>
+                <th>Deadline</th>
                 <th>Update</th>
                 <th>Delete</th>
               </tr>

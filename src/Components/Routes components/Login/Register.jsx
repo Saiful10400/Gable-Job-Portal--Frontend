@@ -46,8 +46,8 @@ console.log(user)
   return (
     <div className="h-[90vh] relative">
       <img src={registrationbg} className="w-full h-52 absolute bottom-44" />
-      <div className="absolute top-5 right-6 w-4/5 h-[90%] bg-white rounded-xl items-center  flex">
-        <div className="w-[45%] px-28 py-5">
+      <div className="absolute top-5 right-6 w-4/5 h-[90%] bg-white rounded-xl items-center shadow-xl flex">
+        <div className="w-[45%] px-28 py-5 ">
           <h1 className="text-5xl font-bold mb-20">Rigistration</h1>
           <form className="flex flex-col gap-7" onSubmit={formHandle}>
             <div className="relative">

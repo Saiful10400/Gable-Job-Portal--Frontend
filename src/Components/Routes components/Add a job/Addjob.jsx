@@ -31,9 +31,10 @@ const navigation=useNavigate()
          const Deadline=startDate.toLocaleDateString("en-US")
          const salaryRange=minSalary+"-"+maxSalary
          const adminEmail=user?.email
+         const company=form.company.value
          
         //  post form dat.
-        axios.post("http://localhost:5000/post_a_job",{url,title,userName,catagory,salaryRange,jobDetails,jobPost,applicant,Deadline,adminEmail})
+        axios.post("http://localhost:5000/post_a_job",{url,company,title,userName,catagory,salaryRange,jobDetails,jobPost,applicant,Deadline,adminEmail})
         .then(res=>{
             swal("Successfull !","You successfully post a job.","success")
             form.reset()
@@ -56,6 +57,10 @@ const navigation=useNavigate()
             <div className="mb-4">
                 <label htmlFor="jobBanner" className="block text-gray-600 text-sm lg:text-xl">Picture URL of the Job Banner</label>
                 <input required type="text" id="jobBanner" name="jobBanner" className="w-full p-2 border rounded" />
+            </div>
+            <div className="mb-4">
+                <label htmlFor="company" className="block text-gray-600 text-sm lg:text-xl">Company logo URL</label>
+                <input required type="text" id="company" name="company" className="w-full p-2 border rounded" />
             </div>
             <div className="mb-4">
                 <label htmlFor="jobTitle" className="block text-gray-600 text-sm lg:text-xl">Job Title</label>
