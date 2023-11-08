@@ -5,6 +5,7 @@ import Login from "../Routes components/Login/Login";
 import Register from "../Routes components/Login/Register";
 import Addjob from "../Routes components/Add a job/Addjob";
 import Myjobs from "../Routes components/My jobs/Myjobs";
+import UpdateOne from "../Routes components/My jobs/UpdateOne";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path:"/register",
         element:<Register></Register>
+      },
+      {
+        path:"/updateOne/:id",
+        element:<UpdateOne></UpdateOne>
       }
        
     ],
