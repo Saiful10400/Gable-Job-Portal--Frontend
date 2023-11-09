@@ -9,7 +9,7 @@ const ReactTab = () => {
     const [data,setData]=useState([])
 
     useEffect(()=>{
-        axios.get("http://localhost:5000/Get_All_Jobs")
+        axios.get("https://assingment11.vercel.app/Get_All_Jobs")
         .then(res=>setData(res.data))
     },[])
 

@@ -11,7 +11,7 @@ const [data,setData]=useState([])
 
  useEffect(()=>{
   if(user){
-    axios.get(`http://localhost:5000/Get_my_jobs?email=${user?.email}`)
+    axios.get(`https://assingment11.vercel.app/Get_my_jobs?email=${user?.email}`)
     .then(res=>setData(res.data))
   }
  },[user])
@@ -29,7 +29,7 @@ const deleteJobHandle = (id) => {
   }).then((value) => {
     switch (value) {
       case "catch":
-        axios.delete(`http://localhost:5000/Delete_my_jobs?id=${id}`)
+        axios.delete(`https://assingment11.vercel.app/Delete_my_jobs?id=${id}`)
           .then(() => {
             const remainingJob = data.filter((item) => item._id != id);
             setData(remainingJob);

@@ -10,6 +10,7 @@ import Alljobs from "../Routes components/All jobs/Alljobs";
 import Job from "../Routes components/All jobs/Job";
 import AppliedJob from "../Routes components/Applied jobs/AppliedJob";
 import Blog from "../Routes components/Blog/Blog";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -26,15 +27,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/Applied_Jobs",
-        element: <AppliedJob></AppliedJob>
+        element: <PrivateRoute><AppliedJob></AppliedJob></PrivateRoute>
       },
       {
         path: "/Add_A_Job",
-        element: <Addjob></Addjob>,
+        element: <PrivateRoute><Addjob></Addjob></PrivateRoute>,
       },
       {
         path: "/My_Jobs",
-        element: <Myjobs></Myjobs>,
+        element: <PrivateRoute><Myjobs></Myjobs></PrivateRoute>,
       },
       {
         path: "/Blog",
@@ -51,13 +52,13 @@ const router = createBrowserRouter([
       {
         path:"/updateOne/:id",
         element:<UpdateOne></UpdateOne>,
-        loader:({params})=>fetch(`http://localhost:5000/updateOne/${params.id}`)
+        loader:({params})=>fetch(`https://assingment11.vercel.app/updateOne/${params.id}`)
       }
       ,
       {
         path:"/job/:id",
         element:<Job></Job>,
-        loader:({params})=>fetch(`http://localhost:5000/updateOne/${params.id}`)
+        loader:({params})=>fetch(`https://assingment11.vercel.app/updateOne/${params.id}`)
       }
        
     ],

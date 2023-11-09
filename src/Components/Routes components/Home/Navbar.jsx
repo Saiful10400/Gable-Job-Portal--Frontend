@@ -71,7 +71,12 @@ const Navbar = () => {
             {!menu ? <AiOutlineMenu></AiOutlineMenu> : <RxCross1></RxCross1>}
           </button>
           <h1>
-            <Link to={"/"}>Goto site</Link>
+            
+
+
+
+
+            
           </h1>
         </div>
 
@@ -94,7 +99,7 @@ const Navbar = () => {
 
               <button className="group relative" onClick={buttonHandle}>
                 <img className="w-14 h-14 rounded-full object-contain" src={user?.photoURL}  />
-                <span className="group-hover:inline-block hidden text-lg font-bold text-gray  absolute w-32 top-full -left-[40px]">{user.displayName}</span>
+                <span className="group-hover:inline-block hidden text-lg font-bold text-gray  absolute w-32 top-full -left-[40px]">{user?.displayName}</span>
               </button>
                 
             </div>

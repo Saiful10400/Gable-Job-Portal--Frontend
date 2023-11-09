@@ -33,7 +33,7 @@ const UpdateOne = () => {
          const company=form.company.value
          const id=_id
         
-         axios.patch("http://localhost:5000/Update_my_jobs",{url,id,company,title,userName,catagory,salaryRange,jobDetails,jobPost,applicant,Deadline})
+         axios.patch("https://assingment11.vercel.app/Update_my_jobs",{url,id,company,title,userName,catagory,salaryRange,jobDetails,jobPost,applicant,Deadline})
          .then(()=>{
             swal("Successfully you updated.","","success")
             nevigation(-1)

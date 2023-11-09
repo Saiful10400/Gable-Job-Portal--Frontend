@@ -8,7 +8,7 @@ const AppliedJob = () => {
     const {user}=useContext(parentProvider)
     const[item,setData]=useState([])
     useEffect(()=>{
-        axios.get(`http://localhost:5000/get_to_job?email=${user.email}`,{name:"saiful"})
+        axios.get(`https://assingment11.vercel.app/get_to_job?email=${user.email}`,{name:"saiful"})
         .then(res=>setData(res.data))
     },[user])
     console.log(item)

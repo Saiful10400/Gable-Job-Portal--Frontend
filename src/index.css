@@ -25,3 +25,15 @@
 .react-tabs__tab--selected{
    font-size: 25px;
 }
+
+.footerBg{
+    background: url(./../public/img/loginBg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mobile{
+    background: url(../public/img/App/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

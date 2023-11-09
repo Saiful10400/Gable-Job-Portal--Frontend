@@ -51,16 +51,16 @@ const facebookHandle=()=>{
   })
 
 }
-const twitterHandle=()=>{
-  twitterLogin()
-  .then(res=>{
-    console.log(res)
-  })
-  .catch(err=>{
-    console.log(err)
-  })
+// const twitterHandle=()=>{
+//   twitterLogin()
+//   .then(res=>{
+//     console.log(res)
+//   })
+//   .catch(err=>{
+//     console.log(err)
+//   })
 
-}
+// }
  
     return (
       <div className="h-[90vh] relative">
@@ -109,9 +109,7 @@ const twitterHandle=()=>{
                 <button onClick={facebookHandle}>
                   <img src={facebookLogo} alt="" />
                 </button>
-                <button onClick={twitterHandle}>
-                  <img src={XLogo} alt="" />
-                </button>
+                
               </span>
             </div>
           </div>

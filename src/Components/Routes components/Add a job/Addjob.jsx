@@ -35,7 +35,7 @@ const navigation=useNavigate()
 
          
         //  post form dat.
-        axios.post("http://localhost:5000/post_a_job",{url,company,title,userName,catagory,salaryRange,jobDetails,jobPost,applicant,Deadline,adminEmail})
+        axios.post("https://assingment11.vercel.app/post_a_job",{url,company,title,userName,catagory,salaryRange,jobDetails,jobPost,applicant,Deadline,adminEmail})
         .then(()=>{
             swal("Successfull !","You successfully post a job.","success")
             form.reset()

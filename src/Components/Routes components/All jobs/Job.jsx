@@ -44,7 +44,7 @@ const Job = () => {
     
 
 
-axios.post("http://localhost:5000/add_to_job",{email,name,resume,data})
+axios.post("https://assingment11.vercel.app/add_to_job",{email,name,resume,data})
 .then(()=>{
   swal("Success!","You successfully Applyed this job","success")
   dik("/")
