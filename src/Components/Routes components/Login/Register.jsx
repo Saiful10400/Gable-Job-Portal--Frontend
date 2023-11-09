@@ -12,6 +12,7 @@ import { parentProvider } from "../../Context Api/DataProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../../Authintication/firebase.config";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet";
 
  
  
@@ -45,6 +46,11 @@ console.log(user)
 
   return (
     <div className="h-[90vh] relative">
+      <Helmet>
+           
+           <title>Gable | Register</title>
+            
+         </Helmet>
       <img src={registrationbg} className="w-full h-52 absolute bottom-44" />
       <div className="absolute top-5 right-6 w-4/5 h-[90%] bg-white rounded-xl items-center shadow-xl flex">
         <div className="w-[45%] px-28 py-5 ">

@@ -4,6 +4,7 @@ import TableData from "./TableData";
 import { parentProvider } from "../../Context Api/DataProvider";
 import axios from "axios";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet";
 
 const Myjobs = () => {
 const {user}=useContext(parentProvider)
@@ -45,7 +46,13 @@ const deleteJobHandle = (id) => {
 
 
   return (
-    <div className="lg:w-[1400px] mx-auto">
+    <div className="lg:w-[1400px] mx-auto min-h-[60vh]">
+
+<Helmet>
+           
+           <title>Gable | My jobs</title>
+            
+         </Helmet>
       <div>
         <div className="overflow-x-auto">
           <table className="table table-zebra">

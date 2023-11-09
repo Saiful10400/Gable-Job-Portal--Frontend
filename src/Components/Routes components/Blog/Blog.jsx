@@ -1,6 +1,13 @@
+import { Helmet } from "react-helmet";
+
 const Blog = () => {
   return (
     <div className="lg:w-[1400px] mx-auto flex flex-col gap-5 py-5">
+      <Helmet>
+           
+           <title>Gable | Blog</title>
+            
+         </Helmet>
       <div>
         <h1 className="text-3xl">
           <span className=" text-red-500">Question:</span> What is an access

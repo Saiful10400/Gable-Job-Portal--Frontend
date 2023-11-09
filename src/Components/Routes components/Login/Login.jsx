@@ -12,6 +12,7 @@ import { FaUser } from "react-icons/fa6";
 import { BiSolidLock } from "react-icons/bi";
 import { useContext } from "react";
 import { parentProvider } from "../../Context Api/DataProvider";
+import { Helmet } from "react-helmet";
 
 
 const Login = () => {
@@ -64,6 +65,11 @@ const facebookHandle=()=>{
  
     return (
       <div className="h-[90vh] relative">
+        <Helmet>
+           
+           <title>Gable | Login</title>
+            
+         </Helmet>
         <img className="w-full h-60 absolute bottom-60" src={loginBg} alt="" />
         <div className="bg-white shadow-xl rounded-xl   absolute top-5 left-6 w-4/5 h-[90%] flex">
           <div className="h-full">

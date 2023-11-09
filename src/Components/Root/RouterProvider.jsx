@@ -57,7 +57,7 @@ const router = createBrowserRouter([
       ,
       {
         path:"/job/:id",
-        element:<Job></Job>,
+        element:<PrivateRoute><Job></Job></PrivateRoute>,
         loader:({params})=>fetch(`https://assingment11.vercel.app/updateOne/${params.id}`)
       }
        

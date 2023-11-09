@@ -9,6 +9,7 @@ import useGetAxios from "../../Custom hooks/useGetAxios";
  import { parentProvider } from './../../Context Api/DataProvider';
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Addjob = () => {
     const[startDate,setStartDate]=useState(new Date())
@@ -53,6 +54,11 @@ const navigation=useNavigate()
 
     return (
         <div className="lg:w-[1400px] mx-auto px-6 pt-5">
+            <Helmet>
+           
+           <title>Gable | Add a JOb</title>
+            
+         </Helmet>
           {/* <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} /> */}
           <form onSubmit={formHandle}>
             <div className="mb-4">

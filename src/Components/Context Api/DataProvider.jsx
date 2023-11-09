@@ -9,11 +9,13 @@ const DataProvider = ({children}) => {
                         // authentication
 
 const [user,setUser]=useState(null)
+const [loading,setLoading]=useState(true)
 
 // setup user on state change.
 useEffect(()=>{
     const unsubscribe=onAuthStateChanged(auth,(user)=>{
         setUser(user)
+        setLoading(false)
     })
     return ()=>{
         unsubscribe()
@@ -57,7 +59,7 @@ return signInWithPopup(auth,twitterAuth)
 
 
 
-    const value={emailSignin,user,createUser,signout,googleLogin,facebookLogin,twitterLogin}
+    const value={emailSignin,loading,user,createUser,signout,googleLogin,facebookLogin,twitterLogin}
     return (
         <parentProvider.Provider value={value}>
             {children}
