@@ -8,6 +8,7 @@ import Myjobs from "../Routes components/My jobs/Myjobs";
 import UpdateOne from "../Routes components/My jobs/UpdateOne";
 import Alljobs from "../Routes components/All jobs/Alljobs";
 import Job from "../Routes components/All jobs/Job";
+import AppliedJob from "../Routes components/Applied jobs/AppliedJob";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/Applied_Jobs",
-        element: <h1>applied jobs</h1>,
+        element: <AppliedJob></AppliedJob>
       },
       {
         path: "/Add_A_Job",
