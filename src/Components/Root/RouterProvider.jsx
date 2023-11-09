@@ -9,6 +9,7 @@ import UpdateOne from "../Routes components/My jobs/UpdateOne";
 import Alljobs from "../Routes components/All jobs/Alljobs";
 import Job from "../Routes components/All jobs/Job";
 import AppliedJob from "../Routes components/Applied jobs/AppliedJob";
+import Blog from "../Routes components/Blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/Blog",
-        element: <h1>blog</h1>,
+        element: <Blog></Blog>
       },
       {
         path: "/Login",

@@ -92,7 +92,10 @@ const Navbar = () => {
               <button onClick={logoutHandle} className="btn btn-sm btn-warning">Logout</button>
               </div>
 
-              <button onClick={buttonHandle}><img className="w-14 h-14 rounded-full object-contain" src={user?.photoURL}  /></button>
+              <button className="group relative" onClick={buttonHandle}>
+                <img className="w-14 h-14 rounded-full object-contain" src={user?.photoURL}  />
+                <span className="group-hover:inline-block hidden text-lg font-bold text-gray  absolute w-32 top-full -left-[40px]">{user.displayName}</span>
+              </button>
                 
             </div>
              
