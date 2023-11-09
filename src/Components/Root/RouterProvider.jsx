@@ -7,6 +7,7 @@ import Addjob from "../Routes components/Add a job/Addjob";
 import Myjobs from "../Routes components/My jobs/Myjobs";
 import UpdateOne from "../Routes components/My jobs/UpdateOne";
 import Alljobs from "../Routes components/All jobs/Alljobs";
+import Job from "../Routes components/All jobs/Job";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,12 @@ const router = createBrowserRouter([
       {
         path:"/updateOne/:id",
         element:<UpdateOne></UpdateOne>,
+        loader:({params})=>fetch(`http://localhost:5000/updateOne/${params.id}`)
+      }
+      ,
+      {
+        path:"/job/:id",
+        element:<Job></Job>,
         loader:({params})=>fetch(`http://localhost:5000/updateOne/${params.id}`)
       }
        

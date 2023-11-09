@@ -32,10 +32,11 @@ const navigation=useNavigate()
          const salaryRange=minSalary+"-"+maxSalary
          const adminEmail=user?.email
          const company=form.company.value
+
          
         //  post form dat.
         axios.post("http://localhost:5000/post_a_job",{url,company,title,userName,catagory,salaryRange,jobDetails,jobPost,applicant,Deadline,adminEmail})
-        .then(res=>{
+        .then(()=>{
             swal("Successfull !","You successfully post a job.","success")
             form.reset()
             navigation("/")

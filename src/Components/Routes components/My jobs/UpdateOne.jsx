@@ -1,13 +1,15 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
  
 import swal from 'sweetalert';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
+import { parentProvider } from '../../Context Api/DataProvider';
 
 const UpdateOne = () => {
     const[startDate,setStartDate]=useState(new Date())
+    const {user}=useContext(parentProvider)
     const nevigation=useNavigate()
 
     const {url,title,_id,userName,company,catagory,salaryRange,jobDetails,jobPost,applicant}=useLoaderData()
@@ -64,7 +66,7 @@ const UpdateOne = () => {
             </div>
             <div className="mb-4">
                 <label htmlFor="userName" className="block text-gray-600 text-sm lg:text-xl">Logged In User Name</label>
-                <input defaultValue={userName} required type="text" id="userName" name="userName" className="w-full p-2 border rounded" />
+                <input defaultValue={user.displayName} required type="text" id="userName" name="userName" className="w-full p-2 border rounded" />
             </div>
             <div className="mb-4">
                 <label htmlFor="jobCategory" className="block text-gray-600 text-sm lg:text-xl">Job Category</label>

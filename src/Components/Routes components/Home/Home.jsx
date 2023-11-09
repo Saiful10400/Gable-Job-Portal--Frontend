@@ -1,5 +1,6 @@
 import Banner from "./Banner";
-import Navbar from "./NavBar";
+import ReactTab from "./Tab";
+
 
  
 const Home = () => {
@@ -7,7 +8,8 @@ const Home = () => {
         <div>
             
             <Banner></Banner>
-            <div className="h-screen"></div>
+             <ReactTab></ReactTab>
+            
         </div>
     );
 };
