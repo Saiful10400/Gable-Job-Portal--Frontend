@@ -1,12 +1,14 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { parentProvider } from "../../Context Api/DataProvider";
+import axios from "axios";
+import swal from "sweetalert";
 
 
 const Job = () => {
   const {user}=useContext(parentProvider)
     const data=useLoaderData()
-   
+   const dik=useNavigate()
 
     // parent button handel.
 
@@ -21,24 +23,42 @@ const Job = () => {
 
       const date1=new Date(notunToday).getTime()
       const date2=new Date(notundate).getTime()
-
-
-
-
-
-console.log(date1,date2)
-
-
-
-
-
-    
-  
  
       if(user.email !== data.adminEmail && date1<date2){
         document.getElementById('my_modal_3').showModal()
       }
+      swal("Failed","This job deadline is over or you are not eligable for this job.","warning")
     }
+
+
+
+
+
+    // chidl submit.
+    const childHandle=(e)=>{
+      e.preventDefault()
+      const form=e.target
+      const email=e.target.email.value
+      const name=form.name.value
+      const resume=form.resume.value
+    
+
+
+axios.post("http://localhost:5000/add_to_job",{email,name,resume,data})
+.then(()=>{
+  swal("Success!","You successfully Applyed this job","success")
+  dik("/")
+})
+.catch(err=>console.log(err))
+
+
+
+
+    }
+
+
+
+
     return (
         <div>
              <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center">
@@ -89,11 +109,11 @@ console.log(date1,date2)
       
       <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
     </form>
-    <form className="flex flex-col justify-center items-center gap-5 my-4">
-      <input defaultValue={`${user?.displayName}`} placeholder="You name" className="w-full p-2 border rounded" type="text" />
-      <input defaultValue={`${user?.email}`} placeholder="Your Email" className="w-full p-2 border rounded" type="email" />
-      <input placeholder="Your Resume link." className="w-full p-2 border rounded" type="text" />
-      <button className="btn btn-primary" type="submit">Submit</button>
+    <form onSubmit={childHandle} className="flex flex-col justify-center items-center gap-5 my-4">
+      <input name="name" defaultValue={`${user?.displayName}`} placeholder="You name" className="w-full p-2 border rounded" type="text" />
+      <input name="email" defaultValue={`${user?.email}`} placeholder="Your Email" className="w-full p-2 border rounded" type="email" />
+      <input name="resume" required placeholder="Your Resume link." className="w-full p-2 border rounded" type="text" />
+      <button  className="btn btn-primary" type="submit">Submit</button>
     </form>
   </div>
 </dialog>
