@@ -28,7 +28,7 @@ const navigation=useNavigate()
          const jobDetails=form.jobDescription.value
          const jobPost=form.jobPostingDate.value
          const applicant=form.applicant.value
-         const Deadline=startDate.toLocaleDateString("en-US")
+         const Deadline=startDate.toLocaleDateString("en-IN")
          const salaryRange=minSalary+"-"+maxSalary
          const adminEmail=user?.email
          const company=form.company.value
@@ -102,7 +102,7 @@ const navigation=useNavigate()
             </div>
             <div className="mb-4 flex gap-6">
                 <label   className="block text-gray-600 text-sm lg:text-xl">Application Deadline :</label>
-                <DatePicker  selected={startDate} onChange={(date) => setStartDate(date)} />
+                <DatePicker  selected={startDate} onChange={(date) => setStartDate(date)}  />
             </div>
             <div className="mb-4">
                 <label htmlFor="applicant" className="block text-gray-600 text-sm lg:text-xl">Applicant Number :</label>

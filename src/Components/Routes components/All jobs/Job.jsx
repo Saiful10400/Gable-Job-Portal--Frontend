@@ -1,9 +1,44 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { parentProvider } from "../../Context Api/DataProvider";
 
 
 const Job = () => {
+  const {user}=useContext(parentProvider)
     const data=useLoaderData()
-    console.log(data)
+   
+
+    // parent button handel.
+
+    const ParentHandle=()=>{
+      
+      // const lastDate=new Date(data.Deadline).getTime()
+      const today=new Date().toLocaleDateString("en-IN")
+      const Array=data.Deadline.split("/")
+      const todayArray=today.split("/")
+      const notundate=Array[1]+"/"+Array[0]+"/"+Array[2]
+      const notunToday=todayArray[1]+"/"+todayArray[0]+"/"+todayArray[2]
+
+      const date1=new Date(notunToday).getTime()
+      const date2=new Date(notundate).getTime()
+
+
+
+
+
+console.log(date1,date2)
+
+
+
+
+
+    
+  
+ 
+      if(user.email !== data.adminEmail && date1<date2){
+        document.getElementById('my_modal_3').showModal()
+      }
+    }
     return (
         <div>
              <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center">
@@ -36,12 +71,36 @@ const Job = () => {
             To apply for this position, please send your resume and cover letter to {data.adminEmail} Please include "{data.title} Application" in the subject line.
           </p>
           <p className="text-gray-600 mt-4"><strong>Apply by:</strong>{new Date().toLocaleDateString()}</p>
-          <button className="bg-blue-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-blue-600">
+          <button onClick={ParentHandle} className="bg-blue-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-blue-600">
             Apply
           </button>
         </div>
       </div>
     </div>
+
+
+
+
+
+ 
+<dialog id="my_modal_3" className="modal">
+  <div className="modal-box">
+    <form method="dialog">
+      
+      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+    <form className="flex flex-col justify-center items-center gap-5 my-4">
+      <input defaultValue={`${user?.displayName}`} placeholder="You name" className="w-full p-2 border rounded" type="text" />
+      <input defaultValue={`${user?.email}`} placeholder="Your Email" className="w-full p-2 border rounded" type="email" />
+      <input placeholder="Your Resume link." className="w-full p-2 border rounded" type="text" />
+      <button className="btn btn-primary" type="submit">Submit</button>
+    </form>
+  </div>
+</dialog>
+
+
+
+
         </div>
     );
 };
