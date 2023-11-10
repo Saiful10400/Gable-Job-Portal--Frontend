@@ -27,7 +27,7 @@ const Alljobs = () => {
 
 
     return (
-      <div className="w-[1400px] mx-auto min-h-[70vh]">
+      <div className="lg:w-[1400px] mx-auto min-h-[70vh]">
         
         <Helmet>
            
@@ -35,7 +35,7 @@ const Alljobs = () => {
            
         </Helmet>
 
-        <div className="text-center my-5">
+        <div className="text-center my-5 hidden">
           <input
             onChange={searchHandle}
             className="w-1/3 h-14 text-xl pl-2 outline outline-2 focus:outline-black focus:outline-2 outline-black "
@@ -43,7 +43,8 @@ const Alljobs = () => {
             placeholder="search name"
           />
         </div>
-        <table className="table table-zebra">
+       
+        <table className="table table-zebra hidden">
           {/* head */}
           <thead>
             <tr className="text-2xl text-center">
@@ -69,6 +70,7 @@ const Alljobs = () => {
             ))}
           </tbody>
         </table>
+        
       </div>
     );
 };

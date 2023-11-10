@@ -62,22 +62,41 @@ const Navbar = () => {
     e.stopPropagation()
     signout()
   }
+  const[navicon,setnavicon]=useState(false)
   return (
     <>
       <div className="sticky z-30 top-0">
         {/* sm screen slider handle */}
-        <div className={`flex justify-between md:hidden text-2xl transition-all duration-300 ${scroll?"bg-white py-2   shadow-lg":"bg-[#D0FED5] py-2"} font-bold `}>
+        <div className={`flex  justify-between md:hidden text-2xl transition-all duration-300 ${scroll?"bg-white py-2   shadow-lg":"bg-[#D0FED5] py-2"} font-bold `}>
+          <div className="flex justify-center items-center gap-4">
           <button className="text-4xl" onClick={() => setMenu(!menu)}>
             {!menu ? <AiOutlineMenu></AiOutlineMenu> : <RxCross1></RxCross1>}
           </button>
-          <h1>
+          <img className="w-12 h-12 object-contain" src={logo} alt="" />
+          </div>
+
+
+
+          
+
+
+          <div className=" relative">
             
+         <button className={`${user? "" : "hidden"}`} onClick={()=>setnavicon(!navicon)}>
+          <img className="w-12 h-12 rounded-full mr-3" src={user?.photoURL} alt="" />
+         </button>
+         <div className={`w-24 bg-red-500 absolute -left-[40px] rounded-md flex flex-col gap-2 ${navicon? "block" :"hidden"}`}>
+          <span className="text-sm bg-green-400 p-1 rounded">{user?.displayName}</span>
+          <button onClick={logoutHandle} className="btn btn-sm">Logout</button>
+         </div>
 
-
-
+         <Link className={`${user? "hidden" : ""}`} to={"/Login"}><button className="btn btn-success btn-sm">Login</button></Link>
 
             
-          </h1>
+          </div>
+
+
+
         </div>
 
         {/* start from md screen. */}
@@ -115,9 +134,9 @@ const Navbar = () => {
       <div
         className={`${
           menu ? "right-[0%]" : "right-full"
-        } transition-all duration-500 flex top-[53px] z-30 absolute`}
+        } transition-all duration-500 flex top-[63px] z-30 absolute`}
       >
-        <div className={`bg-red-400 w-[50vw] h-[94vh] `}>
+        <div className={`bg-green-700 text-white w-[50vw] h-[94vh] fixed `}>
           <ul className="flex flex-col text-center font-bold gap-5 mt-3">
             {li}
           </ul>

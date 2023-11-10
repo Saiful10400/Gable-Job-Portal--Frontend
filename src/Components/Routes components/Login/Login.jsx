@@ -71,16 +71,16 @@ const facebookHandle=()=>{
             
          </Helmet>
         <img className="w-full h-60 absolute bottom-60" src={loginBg} alt="" />
-        <div className="bg-white shadow-xl rounded-xl   absolute top-5 left-6 w-4/5 h-[90%] flex">
-          <div className="h-full">
+        <div className="bg-white shadow-xl rounded-xl   absolute lg:top-5 lg:left-6 w-full border-2 lg:w-4/5 h-[90%] flex lg:flex-row flex-col">
+          <div className="h-full hidden lg:block">
             <img src={loginsti} className="h-full object-contain " alt="" />
           </div>
 
-          <div className="w-[60%] h-full py-5 px-28">
-            <h1 className="text-end text-lg mb-5 font-bold">
+          <div className="lg:w-[60%] w-full h-full py-5 mt-6 lg:mt-0 px-3 lg:px-28">
+            <h1 className="text-end lg:text-lg lg:mb-5 font-bold">
               New user? <Link to={"/register"} className="text-[#38A745] hover:underline">Register</Link>
             </h1>
-            <h1 className="text-5xl font-bold">Welcome Back!</h1>
+            <h1 className="text-5xl lg:mt-0 mt-3 font-bold">Welcome Back!</h1>
             <h2 className="text-xl text-gray-400 mt-4">Login to continue</h2>
             <form onSubmit={formHandle} className="flex flex-col gap-14 mt-10">
               <div className="relative">
@@ -100,15 +100,15 @@ const facebookHandle=()=>{
               /><BiSolidLock className="absolute top-2  left-10 text-3xl text-[#38A745]"></BiSolidLock>
               </div>
               <div className="flex gap-9">
-                <button className="btn w-[40%] text-lg h-20 rounded-full bg-[#38A745] text-white">
+                <button className="btn w-[40%] lg:text-lg text-base h-14 lg:h-20 rounded-full bg-[#38A745] text-white">
                   LOGIN
                 </button>
-                <button className="text-lg">FORGET PASSWORD?</button>
+                <button className="lg:text-lg">FORGET PASSWORD?</button>
               </div>
             </form>
-            <div className="flex items-center gap-36 mt-20">
-              <span className="text-2xl  text-gray-500">Login with</span>{" "}
-              <span className="flex gap-14">
+            <div className="flex items-center gap-8 lg:gap-36 mt-20">
+              <span className="lg:text-2xl text-lg  text-gray-500">Login with</span>{" "}
+              <span className="flex gap-5 lg:gap-14">
                 <button onClick={googleHandle}>
                   <img src={googleLogo} alt="" />
                 </button>
