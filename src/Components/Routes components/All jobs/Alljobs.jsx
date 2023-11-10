@@ -44,7 +44,8 @@ const Alljobs = () => {
           />
         </div>
        
-        <table className="table table-zebra hidden">
+      <div className="overflow-x-scroll">
+      <table className="table table-zebra">
           {/* head */}
           <thead>
             <tr className="text-2xl text-center">
@@ -70,6 +71,7 @@ const Alljobs = () => {
             ))}
           </tbody>
         </table>
+      </div>
         
       </div>
     );

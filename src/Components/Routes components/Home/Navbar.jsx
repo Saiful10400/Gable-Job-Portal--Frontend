@@ -131,21 +131,19 @@ const Navbar = () => {
       </div>
 
       {/* handle sliding in sm screen. */}
-      <div
-        className={`${
-          menu ? "right-[0%]" : "right-full"
-        } transition-all duration-500 flex top-[63px] z-30 absolute`}
-      >
-        <div className={`bg-green-700 text-white w-[50vw] h-[94vh] fixed `}>
-          <ul className="flex flex-col text-center font-bold gap-5 mt-3">
-            {li}
+      <div className={`${menu ? "right-[0%]" : "right-full"} transition-all duration-500 flex top-[72px] z-30  fixed`}>
+        <div
+          className={`  bg-white w-[60vw] h-[94vh]  `}
+        >
+          <ul className="flex flex-col text-start pl-6  font-bold gap-5 mt-3">
+            
+            {
+               li 
+            }
           </ul>
         </div>
-        <div
-          onClick={() => setMenu(false)}
-          className="w-[50vw] h-[94vh]   "
-        ></div>
-      </div>
+        <div onClick={()=>setMenu(false)} className="w-[40vw] h-[94vh]   "></div>
+        </div>
     </>
   );
 };

@@ -51,11 +51,11 @@ console.log(user)
            <title>Gable | Register</title>
             
          </Helmet>
-      <img src={registrationbg} className="w-full h-52 absolute bottom-44" />
-      <div className="absolute top-5 right-6 w-4/5 h-[90%] bg-white rounded-xl items-center shadow-xl flex">
-        <div className="w-[45%] px-28 py-5 ">
-          <h1 className="text-5xl font-bold mb-20">Rigistration</h1>
-          <form className="flex flex-col gap-7" onSubmit={formHandle}>
+      <img src={registrationbg} className="w-full hidden lg:inline-block h-52 absolute bottom-44" />
+      <div className="lg:absolute lg:top-5 lg:right-6 w-full lg:w-4/5 h-[90%] bg-white rounded-xl items-center shadow-xl flex lg:flex-row flex-col">
+        <div className="lg:w-[45%] w-full  px-4 lg:px-28 py-5 ">
+          <h1 className="lg:text-5xl text-4xl font-bold mb-20">Rigistration</h1>
+          <form className="flex flex-col  gap-7" onSubmit={formHandle}>
             <div className="relative">
               <input
                 required
@@ -114,7 +114,7 @@ console.log(user)
             <div className="flex gap-10 items-center">
               <button
                 type="submit"
-                className="btn w-[40%] text-lg h-20 bg-[#38A745] text-white"
+                className="btn w-[40%] text-lg lg:h-20 h-5 bg-[#38A745] text-white"
               >
                 Registration
               </button>
@@ -124,7 +124,7 @@ console.log(user)
             </div>
           </form>
         </div>
-        <div className="">
+        <div className="lg:block hidden">
           <img
             className="w-full h-full object-contain"
             src={registrarionimg}
