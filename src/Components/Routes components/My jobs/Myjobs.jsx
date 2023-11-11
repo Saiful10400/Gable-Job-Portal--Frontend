@@ -54,7 +54,8 @@ const deleteJobHandle = (id) => {
             
          </Helmet>
       <div>
-        <div className="overflow-x-auto">
+        <h1 className={`${data.length<1 ? "block" : "hidden"} text-xl mt-6 font-bold text-center`}>No data is available.</h1>
+        <div className={`${data.length<1 ? "hidden" : "block"} overflow-x-auto`}>
           <table className="table table-zebra">
             {/* head */}
             <thead>
