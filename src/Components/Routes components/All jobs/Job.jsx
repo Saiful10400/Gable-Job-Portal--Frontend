@@ -24,14 +24,21 @@ const Job = () => {
       const date1=new Date(notunToday).getTime()
       const date2=new Date(notundate).getTime()
  
-      if(user.email !== data.adminEmail && date1<date2){
+      if(user.email !== data.adminEmail && date1<=date2){
         document.getElementById('my_modal_3').showModal()
       }
-      swal("Failed","This job deadline is over or you are not eligable for this job.","warning")
+      else if(user.email === data.adminEmail){
+        swal("Failed","You can't apply your own posted job.","warning")
+      } else if(date1>date2){
+        swal("Faild","This job deadline is over.","warning")
+      }
+
+      console.log(date1,date2)
+      
     }
+   
 
-
-
+   
 
 
     // chidl submit.

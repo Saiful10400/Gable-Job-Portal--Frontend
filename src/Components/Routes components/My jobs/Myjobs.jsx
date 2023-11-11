@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import useGetAxios from "../../Custom hooks/useGetAxios";
 import TableData from "./TableData";
 import { parentProvider } from "../../Context Api/DataProvider";
 import axios from "axios";
@@ -61,7 +60,7 @@ const deleteJobHandle = (id) => {
             <thead>
               <tr className="text-2xl">
                 <th></th>
-                <th>Name</th>
+                <th>Title</th>
                 <th>Type</th>
                 <th>Applicant</th>
                 <th>Salary range</th>
