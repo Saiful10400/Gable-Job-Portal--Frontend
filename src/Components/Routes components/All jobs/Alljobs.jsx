@@ -35,12 +35,12 @@ const Alljobs = () => {
            
         </Helmet>
 
-        <div className="text-center my-5 hidden">
+        <div className="text-center my-5 ">
           <input
             onChange={searchHandle}
             className="w-1/3 h-14 text-xl pl-2 outline outline-2 focus:outline-black focus:outline-2 outline-black "
             type="text"
-            placeholder="search name"
+            placeholder="search by title."
           />
         </div>
        
