@@ -27,7 +27,7 @@ const UpdateOne = () => {
          const maxSalary=form.salaryRange2.value
          const jobDetails=form.jobDescription.value
          const jobPost=form.jobPostingDate.value
-         const applicant=form.applicant.value
+         const applicant=parseInt(form.applicant.value)
          const Deadline=startDate.toLocaleDateString("en-IN")
          const salaryRange=minSalary+"-"+maxSalary
          const company=form.company.value

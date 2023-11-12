@@ -24,8 +24,17 @@ const AppliedJob = () => {
 
     const filterHandle=(e)=>{
        const value =e.target.value
-       const remaining=root.filter(item=>item.data.catagory===value)
+
+       if(value=== "All"){
+        setData(root)
+       }
+       else{
+
+        const remaining=root.filter(item=>item.data.catagory===value)
        setData(remaining)
+       }
+
+       
     }
     return (
         <div className="w-[1400px] mx-auto min-h-[65vh]">
@@ -41,6 +50,7 @@ const AppliedJob = () => {
                     <select onChange={filterHandle} id="jobCategory" name="jobCategory" className="w-2/12 p-2 border rounded">
                     <option disabled selected>Select one</option>
                     <option value="On Site">On Site</option>
+                    <option value="All">All</option>
                     <option value="Remote">Remote</option>
                     <option value="Part-Time">Part-Time</option>
                     <option value="Hybrid">Hybrid</option>

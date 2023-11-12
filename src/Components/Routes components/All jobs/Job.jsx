@@ -26,6 +26,8 @@ const Job = () => {
  
       if(user.email !== data.adminEmail && date1<=date2){
         document.getElementById('my_modal_3').showModal()
+        
+  
       }
       else if(user.email === data.adminEmail){
         swal("Failed","You can't apply your own posted job.","warning")
@@ -33,7 +35,7 @@ const Job = () => {
         swal("Faild","This job deadline is over.","warning")
       }
 
-      console.log(date1,date2)
+     
       
     }
    
@@ -54,6 +56,8 @@ const Job = () => {
 axios.post("https://assingment11.vercel.app/add_to_job",{email,name,resume,data})
 .then(()=>{
   swal("Success!","You successfully Applyed this job","success")
+  axios.patch(`http://localhost:5000/update_field?id=${data._id}`)
+  .then(res=>console.log(res.data))
   dik("/")
 })
 .catch(err=>console.log(err))
