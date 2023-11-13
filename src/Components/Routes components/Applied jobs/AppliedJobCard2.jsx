@@ -3,7 +3,7 @@
 const AppliedJobCard2 = ({item ,idx}) => {
     console.log(item)
     return (
-        <tr className="text-lg">
+        <tr className="lg:text-lg">
         <th>{idx+=1}</th>
         <td>{item.data.title}</td>
         <td>{item.data.catagory}</td>

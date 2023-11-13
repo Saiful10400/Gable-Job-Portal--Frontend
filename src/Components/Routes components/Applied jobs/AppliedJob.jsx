@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { parentProvider } from "../../Context Api/DataProvider";
 import axios from "axios";
-import AppliedCard from "./AppliedCard";
+ 
 import { Helmet } from "react-helmet";
-import TableData from "../My jobs/TableData";
+ 
 import AppliedJobCard2 from "./AppliedJobCard2";
 
 
@@ -37,7 +37,7 @@ const AppliedJob = () => {
        
     }
     return (
-        <div className="w-[1400px] mx-auto min-h-[65vh]">
+        <div className="lg:w-[1400px] mx-auto min-h-[65vh]">
             <Helmet>
            
            <title>Gable | Applied job</title>
@@ -45,9 +45,9 @@ const AppliedJob = () => {
          </Helmet>
 
          <div className="flex justify-center items-center gap-4 font-bold my-6" >
-                    <h1 className="text-2xl ">Filter:</h1>
+                    <h1 className="lg:text-2xl text-lg ">Filter:</h1>
                     
-                    <select onChange={filterHandle} id="jobCategory" name="jobCategory" className="w-2/12 p-2 border rounded">
+                    <select onChange={filterHandle} id="jobCategory" name="jobCategory" className="lg:w-2/12 w-4/12  p-2 border rounded">
                     <option disabled selected>Select one</option>
                     <option value="On Site">On Site</option>
                     <option value="All">All</option>
@@ -62,7 +62,7 @@ const AppliedJob = () => {
 
             <div className={`${item.length<1 ? "hidden" : "block"}`}>
                 
-            <div className={` overflow-x-auto`}>
+            <div className={` overflow-x-scroll`}>
           <table className="table table-zebra">
             {/* head */}
             <thead>

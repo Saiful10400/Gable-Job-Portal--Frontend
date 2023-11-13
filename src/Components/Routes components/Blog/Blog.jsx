@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 
 const Blog = () => {
   return (
-    <div className="lg:w-[1400px] mx-auto flex flex-col gap-5 py-5">
+    <div className="lg:w-[1400px] mx-auto flex flex-col gap-5 px-3 lg:px-0 py-5">
       <Helmet>
            
            <title>Gable | Blog</title>

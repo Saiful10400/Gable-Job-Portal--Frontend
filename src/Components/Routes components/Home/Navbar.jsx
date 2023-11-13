@@ -9,7 +9,7 @@ import { parentProvider } from "../../Context Api/DataProvider";
 const Navbar = () => {
     const [menu, setMenu] = useState(false);
     const [scroll,setScroll]=useState(false)
-
+    const{user,signout}=useContext(parentProvider)
     
  
     document.addEventListener("scroll",()=>{
@@ -23,7 +23,7 @@ const Navbar = () => {
     })
  
 
- 
+    // monsera
 
   let li = (
     <>
@@ -33,13 +33,13 @@ const Navbar = () => {
       <NavLink className={"monsera"} onClick={() => setMenu(false)} to={"/All_Jobs"}>
         All Jobs
       </NavLink>
-      <NavLink className={"monsera"} onClick={() => setMenu(false)} to={"/Applied_Jobs"}>
+      <NavLink className={`${user? "" : "hidden"} monsera`} onClick={() => setMenu(false)} to={"/Applied_Jobs"}>
         Applied Jobs
       </NavLink>
-      <NavLink className={"monsera"} onClick={() => setMenu(false)} to={"/Add_A_Job"}>
+      <NavLink className={`${user? "" : "hidden"} monsera`} onClick={() => setMenu(false)} to={"/Add_A_Job"}>
         Add a Job
       </NavLink>
-      <NavLink className={"monsera"} onClick={() => setMenu(false)} to={"/My_Jobs"}>
+      <NavLink className={`${user? "" : "hidden"} monsera`} onClick={() => setMenu(false)} to={"/My_Jobs"}>
         My Jobs
       </NavLink>
       <NavLink className={"/Blog"} onClick={() => setMenu(false)} to={"/Blog"}>
@@ -47,7 +47,7 @@ const Navbar = () => {
       </NavLink>
     </>
   );
-  const{user,signout}=useContext(parentProvider)
+  
   const[show,setShow]=useState(false)
   window.onclick=()=>{
     setShow(false)
