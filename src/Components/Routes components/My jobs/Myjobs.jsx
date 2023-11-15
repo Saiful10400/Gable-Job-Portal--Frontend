@@ -11,7 +11,7 @@ const [data,setData]=useState([])
 
  useEffect(()=>{
   if(user){
-    axios.get(`https://assingment11.vercel.app/Get_my_jobs?email=${user?.email}`)
+    axios.get(`http://localhost:5000/Get_my_jobs?email=${user?.email}`,{withCredentials:true})
     .then(res=>setData(res.data))
   }
  },[user])

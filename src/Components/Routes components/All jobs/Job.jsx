@@ -56,7 +56,7 @@ const Job = () => {
 axios.post("https://assingment11.vercel.app/add_to_job",{email,name,resume,data})
 .then(()=>{
   swal("Success!","You successfully Applyed this job","success")
-  axios.patch(`http://localhost:5000/update_field?id=${data._id}`)
+  axios.patch(`https://assingment11.vercel.app/update_field?id=${data._id}`)
   .then(res=>console.log(res.data))
   dik("/")
 })

@@ -11,11 +11,13 @@ import Job from "../Routes components/All jobs/Job";
 import AppliedJob from "../Routes components/Applied jobs/AppliedJob";
 import Blog from "../Routes components/Blog/Blog";
 import PrivateRoute from "./PrivateRoute";
+import Error from './Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: "/All_Jobs",
