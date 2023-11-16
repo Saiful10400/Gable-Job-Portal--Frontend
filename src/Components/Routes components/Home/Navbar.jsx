@@ -52,6 +52,7 @@ const Navbar = () => {
   const[show,setShow]=useState(false)
   window.onclick=()=>{
     setShow(false)
+    setnavicon(false)
   }
 
   const buttonHandle=(event)=>{
@@ -62,7 +63,8 @@ const Navbar = () => {
   const logoutHandle=(e)=>{
     e.stopPropagation()
     signout()
-    axios.post("http://localhost:5000/jwt_token_remove").then(res=>console.log(res.data))
+    setnavicon(false)
+    axios.post("https://assingment11.vercel.app/jwt_token_remove").then(res=>console.log(res.data))
   }
   const[navicon,setnavicon]=useState(false)
   return (
@@ -84,7 +86,10 @@ const Navbar = () => {
 
           <div className=" relative">
             
-         <button className={`${user? "" : "hidden"}`} onClick={()=>setnavicon(!navicon)}>
+         <button className={`${user? "" : "hidden"}`} onClick={(e)=>{
+          setnavicon(!navicon)
+          e.stopPropagation()
+         }}>
           <img className="w-12 h-12 rounded-full mr-3" src={user?.photoURL} alt="" />
          </button>
          <div className={`w-24 bg-red-500 absolute -left-[40px] rounded-md flex flex-col gap-2 ${navicon? "block" :"hidden"}`}>
