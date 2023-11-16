@@ -1,14 +1,14 @@
 import logo from "../../../../public/img/logo.png"
 const Footer = () => {
   return (
-    <div className="footerBg py-7">
+    <div className="footerBg py-7 font-semibold">
       <footer className="footer lg:w-[1400px] mx-auto p-10  text-base-content">
         <aside>
           <img src={logo} className="bg-gray-200 object-contain rounded-sm" alt="" />
           <p>
-            ACME Industries Ltd.
+            Gable job portal
             <br />
-            Providing reliable tech since 1992
+            Address: 123 Innovation Avenue, Tech City, CA 98765, USA.
           </p>
         </aside>
         <nav>
