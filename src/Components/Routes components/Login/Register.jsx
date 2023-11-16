@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import registrationbg from "../../../../public/img/loginBg.png";
 import registrarionimg from "../../../../public/img/registration.png";
 // react icons.
@@ -7,7 +7,7 @@ import { BiUser } from "react-icons/bi";
 import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
 import { IoLinkOutline } from "react-icons/io5";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { parentProvider } from "../../Context Api/DataProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../../Authintication/firebase.config";
@@ -17,7 +17,8 @@ import { Helmet } from "react-helmet";
  
  
 const Register = () => {
-
+const [error,setError]=useState(null)
+const navigate=useNavigate()
 const{createUser,user}=useContext(parentProvider)
 const formHandle=(e)=>{
   e.preventDefault()
@@ -35,8 +36,11 @@ const formHandle=(e)=>{
     })
     swal("Welcome","You successfully login","success")
     form.reset()
+    navigate("/")
+
   })
   .catch(err=>{
+    setError(err.message)
     console.log(err)
   })
   
@@ -85,6 +89,7 @@ console.log(user)
                 type="password"
               />
               <FaLock className="absolute top-4 left-5 text-[#38A745] text-xl"></FaLock>
+              <p className={`text-red-600 font-bold pt-4 ${error? "" : "hidden"}`}>{error}</p>
             </div>
             <div className="relative">
               <input

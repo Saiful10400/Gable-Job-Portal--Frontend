@@ -20,23 +20,23 @@ const Mobile = () => {
 
             <div className="flex flex-col justify-center items-center gap-2 shadow-lg p-16">
                 <img src={img2} alt="" />
-                <h1 className="font-semibold text-lg">Infiniza.com</h1>
-                <h1 className="text-sm font-normal"> North Street, California</h1>
+                <h1 className="font-semibold text-lg">Solaris Solutions</h1>
+                <h1 className="text-sm font-normal"> Vancouver, British Columbia, Canada</h1>
                 <span className="p-3 border font-bold shadow-lg">Hiring</span>
             </div>
             <div>
             <div className="flex flex-col justify-center items-center gap-2 shadow-lg p-16">
                 <img src={img3} alt="" />
-                <h1 className="font-semibold text-lg">Infiniza.com</h1>
-                <h1 className="text-sm font-normal"> North Street, California</h1>
+                <h1 className="font-semibold text-lg">Quantum Innovations</h1>
+                <h1 className="text-sm font-normal"> British Columbia, Canada</h1>
                 <span className="p-3 border font-bold shadow-lg">Hiring</span>
             </div>
          </div>
          <div>
             <div className="flex flex-col justify-center items-center gap-2 shadow-lg p-16">
                 <img src={img4} alt="" />
-                <h1 className="font-semibold text-lg">Infiniza.com</h1>
-                <h1 className="text-sm font-normal"> North Street, California</h1>
+                <h1 className="font-semibold text-lg">Data Nexus Technologies</h1>
+                <h1 className="text-sm font-normal"> Delhi, india</h1>
                 <span className="p-3 border font-bold shadow-lg">Hiring</span>
             </div>
          </div>

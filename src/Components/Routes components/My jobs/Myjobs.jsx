@@ -36,6 +36,7 @@ const Myjobs = () => {
             .delete(`https://assingment11.vercel.app/Delete_my_jobs?id=${id}`)
             .then(() => {
               const remainingJob = data.filter((item) => item._id != id);
+              swal("Deleted Successfully","","success")
               setData(remainingJob);
             });
           break;

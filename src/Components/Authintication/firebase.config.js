@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD4F116QOb1BCXyr__bhdPT44ZnYToALP4",
-  authDomain: "gable-job-portal.firebaseapp.com",
-  projectId: "gable-job-portal",
-  storageBucket: "gable-job-portal.appspot.com",
-  messagingSenderId: "56027226440",
-  appId: "1:56027226440:web:be79401b5975f90cc3537d"
+  apiKey: import.meta.env.VITE_API_KEY ,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN ,
+  projectId: import.meta.env.VITE_PROJECT_ID ,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET ,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID ,
+  appId: import.meta.env.VITE_APP_ID  
 };
 
 // Initialize Firebase

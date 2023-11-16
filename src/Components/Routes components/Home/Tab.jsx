@@ -6,17 +6,17 @@ import TabCard from "./TabCard";
 
 const ReactTab = () => {
 
-    const [data,setData]=useState([])
+    const [data,setData]=useState(null)
 
     useEffect(()=>{
         axios.get("https://assingment11.vercel.app/Get_All_Jobs")
         .then(res=>setData(res.data))
     },[])
 
-    const onsite=data.filter(item=>item.catagory==="On Site")
-    const Remote=data.filter(item=>item.catagory==="Remote")
-    const PartTime=data.filter(item=>item.catagory==="Part-Time")
-    const Hybrid=data.filter(item=>item.catagory==="Hybrid")
+    const onsite=data?.filter(item=>item.catagory==="On Site")
+    const Remote=data?.filter(item=>item.catagory==="Remote")
+    const PartTime=data?.filter(item=>item.catagory==="Part-Time")
+    const Hybrid=data?.filter(item=>item.catagory==="Hybrid")
     
   return (
     <div className="lg:w-[1400px] mx-auto">
@@ -30,9 +30,12 @@ const ReactTab = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className={`lg:w-[1400px] mx-auto flex justify-center items-center h-[70vh] ${data? "hidden" : "block"}`}>
+        <img className="w-[10%]" src="https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif" alt="" />
+      </div>
+          <div className={`grid grid-cols-1 lg:grid-cols-2 gap-6 ${data? "" : "hidden"}`}>
           {
-            data.map(item=><TabCard key={item._id} item={item}></TabCard>)
+            data?.map(item=><TabCard key={item._id} item={item}></TabCard>)
           }
           </div>
         </TabPanel>
@@ -40,28 +43,28 @@ const ReactTab = () => {
         <TabPanel>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {
-            onsite.map(item=><TabCard key={item._id} item={item}></TabCard>)
+            onsite?.map(item=><TabCard key={item._id} item={item}></TabCard>)
           }
           </div>
         </TabPanel>
         <TabPanel>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {
-            Remote.map(item=><TabCard key={item._id} item={item}></TabCard>)
+            Remote?.map(item=><TabCard key={item._id} item={item}></TabCard>)
           }
           </div>
         </TabPanel>
         <TabPanel>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {
-            PartTime.map(item=><TabCard key={item._id} item={item}></TabCard>)
+            PartTime?.map(item=><TabCard key={item._id} item={item}></TabCard>)
           }
           </div>
         </TabPanel>
         <TabPanel>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {
-            Hybrid.map(item=><TabCard key={item._id} item={item}></TabCard>)
+            Hybrid?.map(item=><TabCard key={item._id} item={item}></TabCard>)
           }
           </div>
         </TabPanel>

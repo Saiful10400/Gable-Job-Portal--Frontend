@@ -10,12 +10,14 @@ import XLogo from "../../../../public/img/social icon/twitter.png"
 // another icons.
 import { FaUser } from "react-icons/fa6";
 import { BiSolidLock } from "react-icons/bi";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { parentProvider } from "../../Context Api/DataProvider";
 import { Helmet } from "react-helmet";
 
 
 const Login = () => {
+  const [error,setError]=useState(null)
+
 const{emailSignin,googleLogin,facebookLogin}=useContext(parentProvider)
 const navigate=useNavigate()
 const location=useLocation()
@@ -30,7 +32,7 @@ const formHandle=(e)=>{
     navigate(location?.state ? location.state : "/")
   })
   .catch(err=>{
-    console.log(err)
+    setError(err.message)
   })
 
 }
@@ -104,6 +106,7 @@ const facebookHandle=()=>{
                 className="  w-full rounded-md pl-32 text-xl font-bold outline outline-black focus:outline-4  focus:outline-green-500  h-[50px]"
                 type="password"
               /><BiSolidLock className="absolute top-2  left-10 text-3xl text-[#38A745]"></BiSolidLock>
+               <p className={`text-red-600 font-bold pt-4 ${error? "" : "hidden"}`}>{error}</p>
               </div>
               <div className="flex gap-9">
                 <button className="btn w-[40%] lg:text-lg text-base h-14 lg:h-20 rounded-full bg-[#38A745] text-white">

@@ -5,6 +5,7 @@ import { RxCross1 } from "react-icons/rx";
 import {  useContext, useState } from "react";
 import logo from "../../../../public/img/logo.png"
 import { parentProvider } from "../../Context Api/DataProvider";
+import axios from "axios";
 
 const Navbar = () => {
     const [menu, setMenu] = useState(false);
@@ -61,6 +62,7 @@ const Navbar = () => {
   const logoutHandle=(e)=>{
     e.stopPropagation()
     signout()
+    axios.post("http://localhost:5000/jwt_token_remove").then(res=>console.log(res.data))
   }
   const[navicon,setnavicon]=useState(false)
   return (
