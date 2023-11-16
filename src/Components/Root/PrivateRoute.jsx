@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { parentProvider } from "../Context Api/DataProvider";
-import { Navigate, } from "react-router-dom";
+import { Navigate, useLocation, } from "react-router-dom";
 import Loading from "./Loading";
 
 
 
 const PrivateRoute = ({children}) => {
     const {user,loading}=useContext(parentProvider)
+    const location=useLocation()
+    
   
 
 
@@ -16,7 +18,7 @@ const PrivateRoute = ({children}) => {
     else if(loading){
         return <Loading></Loading>
     }
-    return <Navigate to="/Login" />
+    return <Navigate state={location.pathname} to="/Login" />
 
 };
 

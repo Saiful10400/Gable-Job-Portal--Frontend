@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginBg from "../../../../public/img/loginBg.png"
 import loginsti from "../../../../public/img/loginsti.png"
 // social logos.
@@ -16,7 +16,9 @@ import { Helmet } from "react-helmet";
 
 
 const Login = () => {
-const{emailSignin,googleLogin,facebookLogin,twitterLogin}=useContext(parentProvider)
+const{emailSignin,googleLogin,facebookLogin}=useContext(parentProvider)
+const navigate=useNavigate()
+const location=useLocation()
 const formHandle=(e)=>{
   e.preventDefault()
   const form=e.target
@@ -25,6 +27,7 @@ const formHandle=(e)=>{
   emailSignin(email,password)
   .then(res=>{
     console.log(res)
+    navigate(location?.state ? location.state : "/")
   })
   .catch(err=>{
     console.log(err)
@@ -36,6 +39,8 @@ const googleHandle=()=>{
   googleLogin()
   .then(res=>{
     console.log(res)
+    navigate(location?.state ? location.state : "/")
+    
   })
   .catch(err=>{
     console.log(err)
@@ -46,6 +51,7 @@ const facebookHandle=()=>{
   facebookLogin()
   .then(res=>{
     console.log(res)
+    navigate(location?.state ? location.state : "/")
   })
   .catch(err=>{
     console.log(err)

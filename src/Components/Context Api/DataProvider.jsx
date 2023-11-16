@@ -17,7 +17,7 @@ useEffect(()=>{
     const unsubscribe=onAuthStateChanged(auth,(user)=>{
         setUser(user)
         if(user){
-            axios.post(`http://localhost:5000/jwt_token?email=${user.email}`,{},{withCredentials:true}).then(res=>console.log(res.data))
+            axios.post(`https://assingment11.vercel.app/jwt_token?email=${user.email}`,{},{withCredentials:true}).then(res=>console.log(res.data))
            
         }
         setLoading(false)

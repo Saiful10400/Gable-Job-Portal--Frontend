@@ -1,8 +1,21 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { parentProvider } from "../../Context Api/DataProvider";
+import swal from "sweetalert";
 
  
 
 const TabCard = ({item}) => {
+
+    const {user}=useContext(parentProvider)
+    const detailsHandle=()=>{
+        if(!user){
+            swal("opps","You have to login first to view details","warning")
+        }
+    }
+
+
+
     return (
         <div className="border-2 shadow-sm p-6 flex gap-1 lg:gap-4">
             <div className="w-1/5 flex justify-center items-center">
@@ -18,7 +31,7 @@ const TabCard = ({item}) => {
                 <h1 className="text-sm font-normal mt-2 text-gray-600">{item.jobDetails}</h1>
             </div>
             <div className="lg:w-1/5 w-[25%] flex flex-col justify-center items-center gap-4">
-                <NavLink to={`/job/${item._id}`}><button className="text-base font-bold btn btn-success btn-sm text-white">Details</button></NavLink>
+                <NavLink onClick={detailsHandle} to={`/job/${item._id}`}><button className="text-base font-bold btn btn-success btn-sm text-white">Details</button></NavLink>
                 <span className="bg-gradient-to-r from-[#38A745] to-[#4CCE5B] text-white p-2 text-sm lg:text-base font-normal">{item.catagory}</span>
             </div>
         </div>
