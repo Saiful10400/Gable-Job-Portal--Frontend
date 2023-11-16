@@ -24,7 +24,7 @@ const Blog = () => {
           itself. Access tokens are sent with each request to the resource
           server to access protected resources. They are used to prove that the
           client has the right to access those resources.
-          <br />
+          <br />  <br />
           Refresh Token: <br />
           A refresh token is a credential used to obtain a new access token.
           While access tokens are short-lived, refresh tokens are usually
@@ -32,18 +32,18 @@ const Blog = () => {
           refresh token to obtain a new access token without requiring the user
           to re-authenticate. This helps in maintaining the user's session
           without constantly asking for their credentials.
-          <br />
-          How They Work: <br /> <br />
+          <br /><br />
+          How They Work: <br /> 
           The user logs in, and upon successful authentication, the server
           responds with an access token and a refresh token. The client includes
           the access token in requests to access protected resources. When the
           access token expires, the client can use the refresh token to request
           a new access token without involving the user in the authentication
           process again.
-          <br />
+          <br /><br />
           Where to Store on the Client-Side:
-          <br />
-          <br />
+          <br /><br /> 
+         
           Access Token:
           <br />
           Store the access token in a secure manner. Commonly, it is stored in
@@ -75,7 +75,7 @@ const Blog = () => {
           routing, middleware support, template engines for rendering HTML, and
           the ability to create RESTful APIs. It's lightweight and allows
           developers to structure their applications in a way that suits their
-          needs. <br />NestJS:
+          needs.<br /> <br />NestJS:
           <br />
           NestJS is a framework for building scalable and maintainable
           server-side applications. It is built on top of Express.js, utilizing
@@ -93,6 +93,10 @@ const Blog = () => {
           structured and opinionated approach to application architecture,
           making it suitable for larger and more complex projects.
         </p>
+      </div>
+      <div>
+        <h1 className="text-3xl text-red-500">My code Explaination.</h1>
+        <p className="font-semibold">In this project i use react as front end and as backen i use Node + express js.Mongodb is present as database.for data fetching i use axios.Also i use many react components like email js,switAlert,environment variable,react tab etc.I use tailwind css for styling and i use Daisy ui as tailwind css component library. for authentication i use firebase.</p>
       </div>
     </div>
   );

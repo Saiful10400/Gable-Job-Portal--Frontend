@@ -1,8 +1,11 @@
-# React + Vite
+client-side live link : https://gable-job-portal.web.app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Some bullet points about this project:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+    1) Only logged in user can post a job.and he can't abel to apply his own job and expired dedline job.
+    2) After successfull apply,user will get an email ablout her applied job summery.
+    3) User can update and delete his posted job.
+    4) This website is responsive for all device.
+    5) Without valid token user can't fetch data from backend.

@@ -69,7 +69,7 @@ const Navbar = () => {
     <>
       <div className="sticky z-30 top-0">
         {/* sm screen slider handle */}
-        <div className={`flex  justify-between md:hidden text-2xl transition-all duration-300 ${scroll?"bg-white py-2   shadow-lg":"bg-[#D0FED5] py-2"} font-bold `}>
+        <div className={`flex  justify-between lg:hidden text-2xl transition-all duration-300 ${scroll?"bg-white py-2   shadow-lg":"bg-[#D0FED5] py-2"} font-bold `}>
           <div className="flex justify-center items-center gap-4">
           <button className="text-4xl" onClick={() => setMenu(!menu)}>
             {!menu ? <AiOutlineMenu></AiOutlineMenu> : <RxCross1></RxCross1>}
