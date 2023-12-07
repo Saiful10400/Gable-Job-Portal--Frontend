@@ -1,4 +1,4 @@
-client-side live link : https://gable-job-portal.web.app
+
 
 
 Some bullet points about this project:
@@ -9,3 +9,5 @@ Some bullet points about this project:
     3) User can update and delete his posted job.
     4) This website is responsive for all device.
     5) Without valid token user can't fetch data from backend.
+
+# Live link: https://gable-job-portal.web.app/
